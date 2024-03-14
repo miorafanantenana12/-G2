@@ -1,7 +1,7 @@
 {
   "facebookAccount": {
-    "email": "mocha1205+2@yandex.com",
-    "password": "UnangMocha123",
+    "email": "",
+    "password": "",
     "2FASecret": "",
     "i_user": "",
     "proxy": null,
@@ -16,15 +16,13 @@
     "enable": false,
     "ignoreCommand": []
   },
-  "adminBot": [
-    "100005954550355"
-  ],
+  "adminBot": [],
   "whiteListMode": {
     "enable": false,
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "Mocha | 🧋✨",
+  "nickNameBot": "❤️💕Bruno💕❤️",
   "prefix": "-",
   "database": {
     "type": "sqlite",
