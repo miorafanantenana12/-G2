@@ -27,7 +27,7 @@ module.exports = {
 
     if (command === "gen") {
       try {
-        const response = await axios.get("https://for-devs.onrender.com/api/mail/gen?apikey=fuck");
+        const response = await axios.get("https://69070.replit.app/tempmail/gen");
         const email = response.data.email;
         return api.sendMessage(`Generated email: ${email}`, event.threadID);
       } catch (error) {
@@ -42,7 +42,7 @@ module.exports = {
       }
 
    try {
-        const inboxResponse = await axios.get(`https://for-devs.onrender.com/api/mail/inbox?email=${email}&apikey=fuck`);
+        const inboxResponse = await axios.get(`https://69070.replit.app/tempmail/message?email=${email}`);
         const inboxMessages = inboxResponse.data;
 
         const formattedMessages = inboxMessages.map((message) => {
