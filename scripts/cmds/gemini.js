@@ -125,7 +125,7 @@ module.exports = {
       };
 
       try {
-          const response = await axios.get(`https://samirapi.replit.app/gemini?query=${encodeURIComponent(query)}&chatid=${userID}&apikey=${apiKey}`);
+          const response = await axios.get(`https://69070.replit.app/gemini?prompt=${encodeURIComponent(query)}&chatid=${userID}&apikey=${apiKey}`);
           await processResponse(response);
       } catch (error) {
           console.error("Error:", error.message);
