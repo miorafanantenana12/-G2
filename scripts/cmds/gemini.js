@@ -79,7 +79,7 @@ module.exports = {
 
             try {
                 const imageUrlParams = imageLinks.map(link => `imageurl=${encodeURIComponent(link)}`).join('&');
-                const response = await axios.get(`https://samirapi.replit.app/geminiv2?prompt=${encodeURIComponent(query)}&${imageUrlParams}&apikey=${apiKey}`);
+                const response = await axios.get(`https://69070.replit.app/gemini?prompt=${encodeURIComponent(query)}&${imageUrlParams}&apikey=${apiKey}`);
                 await processResponse(response);
             } catch (error) {
                 console.error("Error:", error.message);
@@ -87,7 +87,7 @@ module.exports = {
             }
         } else {
             try {
-                const response = await axios.get(`https://samirapi.replit.app/gemini?query=${encodeURIComponent(query)}&chatid=${userID}&apikey=${apiKey}`);
+                const response = await axios.get(`https://69070.replit.app/gemini?prompt=${encodeURIComponent(query)}&chatid=${userID}&apikey=${apiKey}`);
                 await processResponse(response);
             } catch (error) {
                 console.error("Error:", error.message);
