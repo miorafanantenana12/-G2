@@ -1,4 +1,4 @@
-const {get} = require("axios"),
+const { get } = require("axios"),
     url = "https://69070.replit.app/gemini?prompt=";
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
              }
             if(!prompt) return r("Missing input!\n\nIf you want to reset the conversation with "+this.config.name+" you can use “"+this.config.name+" clear”");
             r("🔍…");
-            const res = await get(url+"/baymax_gpt?prompt="+prompt+"&idd="+id);
+            const res = await get(url + prompt + "&idd=" + id);
                 return r(res.data.baymax);
        } catch (error) {
       console.error("Error :", error);
@@ -37,3 +37,4 @@ module.exports = {
      }
    }
 };
+                    
