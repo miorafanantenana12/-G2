@@ -35,7 +35,7 @@ module.exports = {
 		api.sendMessage("", threadID, messageID);
 
 		try {
-			const response = await axios.get(`https://hiroshi-api-hub.replit.app/ai/hercai?ask=${encodeURIComponent(query)}`);
+			const response = await axios.get(`https://api.easy-api.online/api/blackbox?query=${encodeURIComponent(query)}`);
 
 			if (response.status === 200 && response.data && response.data.message) {
 				const answer = response.data.message;
