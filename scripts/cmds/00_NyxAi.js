@@ -4,7 +4,8 @@ const fs = require("fs");
 const history = {};
 let isFontEnabled = true;
 
-module.exports.config = {
+module.exports = {
+	config : {
 	name: "Nyx",
 	version: "3.1",
 	hasPermssion: 0,
@@ -156,4 +157,4 @@ function formatFont(text) {
 	return formattedText;
 }
 
-module.exports.run = async function ({ api, event }) {};
+onStart : async function ({ api, event }) {};
