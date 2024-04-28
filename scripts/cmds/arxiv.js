@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 module.exports = {
+config :{
   name: "arxiv",
   version: "1.0.0",
   role: 0,
@@ -10,6 +11,7 @@ module.exports = {
   commandCategory: "Information Retrieval",
   usage: ["arxiv [query]"],
   cooldowns: 5,
+},
   onStart: async function ({ api, event, args }) {
     const { threadID, messageID } = event;
     const query = args.join(' ');
