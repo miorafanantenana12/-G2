@@ -29,7 +29,7 @@ async function a(api, event, args, message) {
 
 async function d(a, b) {
   try {
-    const d = await axios.get(`https://personal-ai-phi.vercel.app/kshitiz?prompt=${encodeURIComponent(a)}&content;=${encodeURIComponent(b)}`);
+    const d = await axios.get(`https://boxgptapi.replit.app/api/chatgpt?msg=${encodeURIComponent(a)}&content;=${encodeURIComponent(b)}`);
     return d.data;
   } catch (f) {
     console.error("Error from api", f.message);
