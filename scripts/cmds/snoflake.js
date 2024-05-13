@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports = {
   config: {
-    name: "snoflake",
+    name: "snowflakes",
     author: "cliff",//api by hazey
     version: "1.0.0",
     countDown: 5,
